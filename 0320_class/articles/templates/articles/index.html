@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>MOVIE</h1>
+    <hr>
+
+    {% for article in articles %}
+    <p>영화 번호 : {{article.id}}</p>
+    <p><a href="{% url 'articles:detail' article.pk %}">영화 제목 : {{article.title}}</a></p>
+    <p>영화 내용 : {{article.content}}</p>
+    <hr>
+    {% endfor %}
+{% endblock content %}
