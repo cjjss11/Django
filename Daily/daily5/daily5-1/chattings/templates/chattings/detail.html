@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>DETAIL</h1>
+    <h3>{{chatting.pk}} 번째 글</h3>
+    <br>
+    <p>작성자 : {{chatting.user}}</p>
+    <p>내용 : {{chatting.contetn}}</p>
+    <p>작성 시각 : {{chatting.created_at}}</p>
+    <p>수정 시각 : {{chatting.updated_at}}</p>
+    <br>
+    <a href="{% url 'chattings:index' %}">[back]</a>
+{% endblock content %}
