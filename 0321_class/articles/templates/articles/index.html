@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <img src="{% static 'articles/bamtol.jpg' %}" alt="bamtol" height = "300">
+    <h1>Articles</h1>
+    <a href="{% url 'articles:create' %}">new</a>
+    <hr>
+    {% for article in articles %}
+        <p>글 번호 : {{article.pk}}</p>
+        <a href="{% url 'articles:detail' article.pk %}">
+            <p>글 제목 : {{article.title}}</p>
+        </a>
+        <p>글 내용 : {{article.content}}</p>
+    <hr>
+    {% endfor %}
+{% endblock content %}
